@@ -1,0 +1,11 @@
+@mixin media-query-large {
+  @media screen and (max-width: break-point(break-point-large)) {
+    @content;
+  }
+}
+
+@mixin media-query-desktop {
+  @media screen and (min-width: break-point(break-point-desktop)) {
+    @content;
+  }
+}

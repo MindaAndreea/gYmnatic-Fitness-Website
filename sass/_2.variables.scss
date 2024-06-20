@@ -43,6 +43,7 @@ $font-sizes: (
   "font-size-medium": calc(1.5rem + 2vw),
   "font-size-large": calc(1.5rem + 5vw),
   "font-size-xlarge": calc(2.5rem + 5vw),
+  "font-size-static-medium": 1.5rem,
 );
 
 @function font-size($font-size-style) {
@@ -53,6 +54,7 @@ $break-points: (
   "break-point-small": 400px,
   "break-point-medium": 600px,
   "break-point-tablet": 800px,
+  "break-point-large": 950px,
   "break-point-desktop": 1300px,
 );
 

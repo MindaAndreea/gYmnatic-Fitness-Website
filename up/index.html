@@ -49,8 +49,15 @@
           <li class="header-nav-links-item">
             <a href="#" data-text="Register">Register</a>
           </li>
-          <div class="header-nav-links-toggle-container">
+          <div
+            class="header-nav-links-toggle-container"
+            onmouseover="showTooltip(this)"
+            onmouseout="hideTooltip(this)"
+          >
             <input type="checkbox" id="toggle" name="theme" />
+            <div class="tooltip-text custom-tooltip" style="display: none">
+              Click me for dark mode!
+            </div>
           </div>
         </ul>
       </nav>
@@ -63,6 +70,11 @@
     <section class="clients">Clients</section>
     <section class="register">Register</section>
     <footer class="footer">Footer</footer>
-    <script src="script.js"></script>
+    <script src="/up/javascript/dark-mode.js"></script>
+    <script src="/up/javascript/hover-togglebtn.js"></script>
+    <script src="/up/javascript/form.js"></script>
+    <script src="/up/javascript/nav.js"></script>
+    <script src="/up/javascript/scroll.js"></script>
+    <script src="/up/javascript/testimonials.js"></script>
   </body>
 </html>
