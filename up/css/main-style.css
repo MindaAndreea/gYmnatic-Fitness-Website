@@ -46,7 +46,6 @@ body {
   display: grid;
   grid-template-columns: [container-start] 1fr [center-start] repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end]) [center-end] 1fr [container-end];
   grid-template-rows: min-content 90vh repeat(9, min-content);
-  grid-template-rows: min-content 100vh repeat(9, min-content);
 }
 
 li {
@@ -68,8 +67,16 @@ i {
 }
 
 .header {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   grid-column: container-start/container-end;
+}
+.header-nav-logo img {
+  width: 5rem;
+  height: 5rem;
+}
+.header-nav-links {
+  display: flex;
+  flex-direction: row;
 }
 
 .showcase {

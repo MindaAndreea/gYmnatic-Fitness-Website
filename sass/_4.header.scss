@@ -1,4 +1,16 @@
 .header {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   grid-column: container-start / container-end;
+
+  &-nav {
+    &-logo img {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
