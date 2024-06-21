@@ -1,3 +1,31 @@
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: all 0.5s !important;
+  transition-delay: 0 !important;
+}
+
+.showcase {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.showcase {
+  padding: 6vh 4vw;
+}
+
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+}
+
 *,
 *::before,
 *::after {
@@ -17,6 +45,7 @@ html {
   --color-fourth-mod: rgba(192, 162, 43, 0.65);
   --color-fifth: white;
   --color-fifth-mod: rgba(255, 255, 255, 0.5);
+  --color-black: black;
 }
 
 html[data-theme=dark] {
@@ -46,6 +75,11 @@ body {
   display: grid;
   grid-template-columns: [container-start] 1fr [center-start] repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end]) [center-end] 1fr [container-end];
   grid-template-rows: min-content 90vh repeat(9, min-content);
+}
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-rows: min-content 100vh repeat(9, min-content);
+  }
 }
 
 li {
@@ -113,7 +147,7 @@ i {
 }
 .header-nav-links-item a:link,
 .header-nav-links-item a:visited {
-  font-family: "Balsamiq-Sans";
+  font-family: "Balsamiq Sans", cursive;
   margin-right: 2vw;
   padding: 0 1.5rem;
   display: block;
@@ -359,10 +393,175 @@ i {
   }
 }
 .showcase {
-  background-color: var(--color-third);
   grid-column: container-start/container-end;
+  background-image: linear-gradient(var(--color-third-mod), var(--color-third-mod)), url(/up/images/showcase/showcase-bg.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.showcase-content {
+  display: flex;
+  flex-direction: column;
+}
+.showcase-content-title {
+  text-align: center;
+  font-size: calc(1.5rem + 5vw);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: "Balsamiq-Sans";
+  letter-spacing: 0.1rem;
+}
+.showcase-content-gradient-text {
+  background-image: linear-gradient(135deg, var(--color-secondary), var(--color-fifth));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+.showcase-content-title::-moz-selection {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+.showcase-content-title::selection {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+.showcase-content-gradient-text::-moz-selection {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+.showcase-content-gradient-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+.showcase-content-gradient-text.selected::after {
+  background: var(--color-primary);
+  color: var(--color-black);
+  -webkit-text-fill-color: var(--color-black);
+}
+.showcase-content-gradient-text::-moz-selection.selected::after {
+  display: block;
+}
+.showcase-content-gradient-text::selection.selected::after, .showcase-content-gradient-text.selected::-moz-selection::after {
+  display: block;
+}
+.showcase-content .transition-gradient-text {
+  transition: all 1s;
+}
+.showcase-content-parag {
+  font-size: calc(1.5rem + 1vw);
+  color: var(--color-fifth);
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  margin-bottom: calc(1.5rem + 2vw);
+}
+.showcase-content-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.showcase-content-links a:link,
+.showcase-content-links a:visited {
+  font-size: calc(1.2rem + 0.5vw);
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  padding: calc(0.7rem + 1vw) calc(1rem + 1vw);
+  text-transform: uppercase;
+  position: relative;
+  border-radius: 0.5rem;
+  z-index: 1;
+  transition: all 0.5 ease-in-out;
+}
+.showcase-content-links a:link:first-child,
+.showcase-content-links a:visited:first-child {
+  margin-right: calc(2rem + 2vw);
+  background-color: var(--color-third);
+  border: 0.2rem solid var(--color-third);
+  color: var(--color-fifth);
+}
+.showcase-content-links a:link:last-child,
+.showcase-content-links a:visited:last-child {
+  background-color: var(--color-secondary);
+  border: 0.2rem solid var(--color-secondary);
+  color: var(--color-fifth);
+}
+.showcase-content-links a:link:first-child::before,
+.showcase-content-links a:visited:first-child::before,
+.showcase-content-links a:link:last-child::before,
+.showcase-content-links a:visited:last-child::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-fifth);
+  border-radius: inherit;
+  z-index: -1;
+  transform: scale(0);
+  transition: all 0.5 ease-in-out;
+}
+.showcase-content-links a:hover:first-child::before,
+.showcase-content-links a:active:first-child::before,
+.showcase-content-links a:hover:last-child::before,
+.showcase-content-links a:active:last-child::before {
+  transform: scale(1);
+}
+.showcase-content-links a:hover:first-child,
+.showcase-content-links a:active:first-child {
+  color: var(--color-secondary);
+}
+.showcase-content-links a:hover:last-child,
+.showcase-content-links a:active:last-child {
+  color: var(--color-third);
 }
 
+@media screen and (max-width: 800px) {
+  .showcase-content-title {
+    text-align: left;
+  }
+  .showcase-content-parag {
+    text-align: left;
+  }
+  .showcase-content-links {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 600px) {
+  .showcase {
+    padding: 4rem;
+  }
+  .showcase-content-title {
+    font-size: calc(2.5rem + 5vw);
+  }
+  .showcase-content-parag {
+    font-size: 2rem;
+  }
+  .showcase-content-links a:link,
+  .showcase-content-links a:visited {
+    font-size: calc(1.2rem + 0.5vw);
+  }
+}
+@media screen and (max-width: 400px) {
+  .showcase-content-links {
+    flex-direction: column;
+  }
+  .showcase-content-links a:first-child {
+    margin-bottom: calc(1.5rem + 1vw);
+  }
+}
 .motto {
   background-color: var(--color-fourth);
   grid-column: container-start/container-end;
@@ -396,12 +595,4 @@ i {
 .footer {
   background-color: var(--color-secondary);
   grid-column: container-start/container-end;
-}
-
-html.transition,
-html.transition *,
-html.transition *::before,
-html.transition *::after {
-  transition: all 0.5s !important;
-  transition-delay: 0 !important;
 }/*# sourceMappingURL=main-style.css.map */

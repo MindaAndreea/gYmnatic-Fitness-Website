@@ -15,3 +15,21 @@
     @content;
   }
 }
+
+@mixin media-query-tablet {
+  @media screen and (max-width: break-point(break-point-tablet)) {
+    @content;
+  }
+}
+
+@mixin media-query-medium {
+  @media screen and (max-width: break-point(break-point-medium)) {
+    @content;
+  }
+}
+
+@mixin media-query-small {
+  @media screen and (max-width: break-point(break-point-small)) {
+    @content;
+  }
+}
