@@ -10,14 +10,32 @@
   }
 }
 
+@mixin media-query-desktop-large {
+  @media screen and (min-width: break-point(break-point-desktop-large)) {
+    @content;
+  }
+}
+
 @mixin media-query-desktop {
   @media screen and (min-width: break-point(break-point-desktop)) {
     @content;
   }
 }
 
+@mixin media-query-xtablet {
+  @media screen and (max-width: break-point(break-point-xtablet)) {
+    @content;
+  }
+}
+
 @mixin media-query-tablet {
   @media screen and (max-width: break-point(break-point-tablet)) {
+    @content;
+  }
+}
+
+@mixin media-query-large {
+  @media screen and (max-width: break-point(break-point-large)) {
     @content;
   }
 }

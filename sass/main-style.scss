@@ -20,6 +20,7 @@ html.transition *::after {
 
 %section-heading {
   font-size: calc(1.5rem + 2vw);
+  font-family: "Balsamiq Sans";
   font-weight: 300;
   letter-spacing: 0.2rem;
   color: var(--color-fifth);
@@ -39,7 +40,7 @@ html.transition *::after {
   color: var(--color-fifth);
   font-weight: 400;
   font-family: "Balsamiq-Sans";
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.3rem;
   line-height: 1.4;
 }
 
