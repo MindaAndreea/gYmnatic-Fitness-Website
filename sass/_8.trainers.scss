@@ -59,7 +59,8 @@
       &-parag {
         @extend %section-parag;
         color: var(--color-black);
-        width: 35rem;
+        font-size: 2rem;
+        width: 25rem;
         bottom: 30%;
         letter-spacing: 0.4rem;
         line-height: 1.4;
@@ -182,23 +183,16 @@
   }
 }
 
-@include media-query-medium {
+@include media-query-large {
   .trainers {
-    &-title {
-      margin-bottom: calc(6rem + 1vh);
-    }
-
     &-content {
-      margin-right: calc(2.5rem + 2vw);
-      margin-left: calc(2.5rem + 2vw);
-
       &-card {
         &-specialty {
-          bottom: 50%;
+          bottom: 70%;
         }
 
         &-name {
-          bottom: 40%;
+          bottom: 60%;
         }
 
         &-parag {
@@ -221,28 +215,6 @@
       gap: 3vw calc(1rem + 1vw);
       margin-right: 1rem;
       margin-left: 1rem;
-
-      &-card {
-        width: 25rem;
-
-        &-specialty {
-          bottom: 65%;
-        }
-
-        &-name {
-          bottom: 55%;
-        }
-
-        &-parag {
-          bottom: 32%;
-          margin-bottom: none;
-          width: 23rem;
-        }
-
-        &-link {
-          bottom: 5%;
-        }
-      }
     }
   }
 }

@@ -958,7 +958,8 @@ i {
 }
 .trainers-content-card-parag {
   color: var(--color-black);
-  width: 35rem;
+  font-size: 2rem;
+  width: 25rem;
   bottom: 30%;
   letter-spacing: 0.4rem;
   line-height: 1.4;
@@ -1041,19 +1042,12 @@ i {
     bottom: 25%;
   }
 }
-@media screen and (max-width: 600px) {
-  .trainers-title {
-    margin-bottom: calc(6rem + 1vh);
-  }
-  .trainers-content {
-    margin-right: calc(2.5rem + 2vw);
-    margin-left: calc(2.5rem + 2vw);
-  }
+@media screen and (max-width: 950px) {
   .trainers-content-card-specialty {
-    bottom: 50%;
+    bottom: 70%;
   }
   .trainers-content-card-name {
-    bottom: 40%;
+    bottom: 60%;
   }
   .trainers-content-card-parag {
     bottom: 28%;
@@ -1069,23 +1063,6 @@ i {
     gap: 3vw calc(1rem + 1vw);
     margin-right: 1rem;
     margin-left: 1rem;
-  }
-  .trainers-content-card {
-    width: 25rem;
-  }
-  .trainers-content-card-specialty {
-    bottom: 65%;
-  }
-  .trainers-content-card-name {
-    bottom: 55%;
-  }
-  .trainers-content-card-parag {
-    bottom: 32%;
-    margin-bottom: none;
-    width: 23rem;
-  }
-  .trainers-content-card-link {
-    bottom: 5%;
   }
 }
 .testimonials {
