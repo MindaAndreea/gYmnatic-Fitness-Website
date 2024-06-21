@@ -6,14 +6,30 @@ html.transition *::after {
   transition-delay: 0 !important;
 }
 
-.showcase {
+.motto, .showcase {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.showcase {
+.motto, .showcase {
   padding: 6vh 4vw;
+}
+
+.motto-content-title {
+  font-size: calc(1.5rem + 2vw);
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  color: var(--color-fifth);
+}
+
+.motto-content-parag {
+  font-size: calc(1rem + 0.8vw);
+  color: var(--color-fifth);
+  font-weight: 400;
+  font-family: "Balsamiq-Sans";
+  letter-spacing: 0.2rem;
+  line-height: 1.4;
 }
 
 ::-moz-selection {
@@ -565,6 +581,107 @@ i {
 .motto {
   background-color: var(--color-fourth);
   grid-column: container-start/container-end;
+  background-image: url(/up/images/motto/motto-bg.jpg);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  place-content: center;
+}
+.motto-content {
+  display: grid;
+  grid-row-gap: 4vh;
+  background-color: var(--color-third-mod);
+  padding: 2rem;
+}
+.motto-content i {
+  cursor: pointer;
+  display: grid;
+  place-self: center;
+}
+.motto-content-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.motto-content-first-span {
+  color: var(--color-fifth-mod);
+  width: 14rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+.motto-content-links:link, .motto-content-links:visited {
+  background-color: none;
+  place-self: start;
+  padding: 0.7rem 1.5rem;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.motto-content-links:link span, .motto-content-links:visited span {
+  display: block;
+  position: absolute;
+}
+.motto-content-links:link span:first-child, .motto-content-links:visited span:first-child {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 0.2rem;
+  background: linear-gradient(90deg, transparent, var(--color-primary));
+  transition: 0.5s;
+  transition-delay: 1s;
+}
+.motto-content-links:link span:nth-child(2), .motto-content-links:visited span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  height: 100%;
+  width: 0.2rem;
+  background: linear-gradient(180deg, transparent, var(--color-primary));
+  transition: 0.5s;
+  transition-delay: 0.75s;
+}
+.motto-content-links:link span:nth-child(3), .motto-content-links:visited span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 0.2rem;
+  background: linear-gradient(270deg, transparent, var(--color-primary));
+  transition: 0.7s;
+  transition-delay: 0.25s;
+}
+.motto-content-links:link span:last-child, .motto-content-links:visited span:last-child {
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 0.2rem;
+  background: linear-gradient(360deg, transparent, var(--color-primary));
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.motto-content-links:hover, .motto-content-links:active {
+  background: var(--color-primary);
+  transition-delay: 1s;
+}
+.motto-content-links:hover span:first-child, .motto-content-links:active span:first-child {
+  left: 100%;
+  transition-duration: 1s;
+  transition-delay: 0s;
+}
+.motto-content-links:hover span:nth-child(2), .motto-content-links:active span:nth-child(2) {
+  top: 100%;
+  transition-duration: 1s;
+  transition-delay: 0.25s;
+}
+.motto-content-links:hover span:nth-child(3), .motto-content-links:active span:nth-child(3) {
+  right: 100%;
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+}
+.motto-content-links:hover span:last-child, .motto-content-links:active span:last-child {
+  top: -100%;
+  transition-duration: 1s;
+  transition-delay: 0.75s;
 }
 
 .features {

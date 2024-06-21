@@ -19,14 +19,14 @@ html.transition *::after {
 }
 
 %section-heading {
-  font-size: font-size(font-size-medium);
-  font-weight: font-weight(font-weight-light);
+  font-size: calc(1.5rem + 2vw);
+  font-weight: 300;
   letter-spacing: 0.2rem;
   color: var(--color-fifth);
 }
 
 %section-subheading {
-  font-size: font-size(font-size-small);
+  font-size: calc(1.2rem + 0.5vw);
   color: var(--color-fifth);
 }
 
@@ -35,10 +35,12 @@ html.transition *::after {
 }
 
 %section-parag {
-  font-size: font-size(font-size-small);
+  font-size: calc(1rem + 0.8vw);
   color: var(--color-fifth);
-  font-family: "Balsamiq Sans", cursive;
+  font-weight: 400;
+  font-family: "Balsamiq-Sans";
   letter-spacing: 0.2rem;
+  line-height: 1.4;
 }
 
 ::selection {

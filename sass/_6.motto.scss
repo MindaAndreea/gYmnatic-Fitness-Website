@@ -1,4 +1,136 @@
 .motto {
   background-color: var(--color-fourth);
   grid-column: container-start / container-end;
+  background-image: url(/up/images/motto/motto-bg.jpg);
+  @extend %background;
+  @extend %section-padding;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  place-content: center;
+
+  &-content {
+    i {
+      cursor: pointer;
+      display: grid;
+      place-self: center;
+    }
+
+    display: grid;
+    grid-row-gap: 4vh;
+    background-color: var(--color-third-mod);
+    padding: 2rem;
+
+    &-icon-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &-first-span {
+      color: var(--color-fifth-mod);
+      width: 14rem;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    &-title {
+      @extend %section-heading;
+    }
+
+    &-parag {
+      @extend %section-parag;
+    }
+
+    &-links:link,
+    &-links:visited {
+      background-color: none;
+      place-self: start;
+      padding: 0.7rem 1.5rem;
+      transition: all 0.5s ease-in-out;
+      position: relative;
+      overflow: hidden;
+
+      span {
+        display: block;
+        position: absolute;
+      }
+
+      span:first-child {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 0.2rem;
+        background: linear-gradient(90deg, transparent, var(--color-primary));
+        transition: 0.5s;
+        transition-delay: 1s;
+      }
+
+      span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(180deg, transparent, var(--color-primary));
+        transition: 0.5s;
+        transition-delay: 0.75s;
+      }
+
+      span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 0.2rem;
+        background: linear-gradient(270deg, transparent, var(--color-primary));
+        transition: 0.7s;
+        transition-delay: 0.25s;
+      }
+
+      span:last-child {
+        top: 100%;
+        left: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(360deg, transparent, var(--color-primary));
+        transition: 0.5s;
+        transition-delay: 0s;
+      }
+    }
+
+    &-links:hover,
+    &-links:active {
+      background: var(--color-primary);
+      transition-delay: 1s;
+    }
+
+    &-links:hover span:first-child,
+    &-links:active span:first-child {
+      left: 100%;
+      transition-duration: 1s;
+      transition-delay: 0s;
+    }
+
+    &-links:hover span:nth-child(2),
+    &-links:active span:nth-child(2) {
+      top: 100%;
+      transition-duration: 1s;
+      transition-delay: 0.25s;
+    }
+
+    &-links:hover span:nth-child(3),
+    &-links:active span:nth-child(3) {
+      right: 100%;
+      transition-duration: 1s;
+      transition-delay: 0.5s;
+    }
+
+    &-links:hover span:last-child,
+    &-links:active span:last-child {
+      top: -100%;
+      transition-duration: 1s;
+      transition-delay: 0.75s;
+    }
+  }
 }
