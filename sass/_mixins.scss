@@ -4,6 +4,12 @@
   }
 }
 
+@mixin media-query-custom-tooltip {
+  @media screen and (max-width: break-point(break-point-tooltip)) {
+    @content;
+  }
+}
+
 @mixin media-query-desktop {
   @media screen and (min-width: break-point(break-point-desktop)) {
     @content;

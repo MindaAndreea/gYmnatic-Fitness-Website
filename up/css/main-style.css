@@ -146,8 +146,6 @@ i {
 .header-nav-links-toggle-container {
   display: flex;
   align-items: center;
-  position: relative;
-  display: inline-block;
 }
 .header-nav-links-toggle-container input[type=checkbox] {
   position: relative;
@@ -195,6 +193,14 @@ i {
   right: 39%;
   box-shadow: none;
 }
+.header-nav-links-toggle-container .custom-tooltip {
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: none;
+  margin-left: 1rem;
+  letter-spacing: 0.3rem;
+  font-size: 1.2rem;
+}
 @media screen and (max-width: 950px) {
   .header-nav {
     position: fixed;
@@ -241,6 +247,8 @@ i {
   }
   .header-nav-links-toggle-container {
     justify-content: center;
+    position: relative;
+    display: inline-block;
   }
   .header-nav-links .custom-tooltip {
     position: absolute;
@@ -298,6 +306,29 @@ i {
   .header-overlay.open {
     display: block;
     opacity: 0.8;
+  }
+}
+@media screen and (max-width: 1235px) {
+  .header-nav-links-toggle-container .custom-tooltip {
+    background-color: rgba(255, 255, 255, 0.725);
+    color: var(--color-third);
+    font-weight: 400;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    width: 20rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 1.2rem;
+    bottom: 100%;
+    margin-bottom: 0.3rem;
+    left: 49%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: none;
+    text-transform: none;
+    letter-spacing: 0.2rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
   }
 }
 @media screen and (min-width: 1300px) {
@@ -365,4 +396,12 @@ i {
 .footer {
   background-color: var(--color-secondary);
   grid-column: container-start/container-end;
+}
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: all 0.5s !important;
+  transition-delay: 0 !important;
 }/*# sourceMappingURL=main-style.css.map */

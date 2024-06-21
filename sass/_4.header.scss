@@ -95,8 +95,6 @@
       &-toggle-container {
         display: flex;
         align-items: center;
-        position: relative;
-        display: inline-block;
 
         input[type="checkbox"] {
           position: relative;
@@ -148,6 +146,15 @@
         input:checked[type="checkbox"]::after {
           right: 39%;
           box-shadow: none;
+        }
+
+        .custom-tooltip {
+          color: var(--color-secondary);
+          font-weight: font-weight(font-weight-bold);
+          text-transform: none;
+          margin-left: 1rem;
+          letter-spacing: 0.3rem;
+          font-size: 1.2rem;
         }
       }
     }
@@ -203,6 +210,8 @@
 
         &-toggle-container {
           justify-content: center;
+          position: relative;
+          display: inline-block;
         }
 
         .custom-tooltip {
@@ -271,6 +280,36 @@
     &-overlay.open {
       display: block;
       opacity: 0.8;
+    }
+  }
+
+  @include media-query-custom-tooltip {
+    &-nav {
+      &-links {
+        &-toggle-container {
+          .custom-tooltip {
+            background-color: rgba(255, 255, 255, 0.725);
+            color: var(--color-third);
+            font-weight: font-weight(font-weight-regular);
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            width: 20rem;
+            height: 4.5rem;
+            line-height: 4.5rem;
+            font-size: 1.2rem;
+            bottom: 100%;
+            margin-bottom: 0.3rem;
+            left: 49%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: none;
+            text-transform: none;
+            letter-spacing: 0.2rem;
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
     }
   }
 
