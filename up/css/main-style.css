@@ -12,11 +12,11 @@ html.transition *::after {
   background-size: cover;
 }
 
-.motto, .showcase {
+.trainers, .motto, .showcase {
   padding: 6vh 4vw;
 }
 
-.features-content-title, .motto-content-title {
+.trainers-title, .features-content-title, .motto-content-title {
   font-size: calc(1.5rem + 2vw);
   font-family: "Balsamiq Sans";
   font-weight: 300;
@@ -24,7 +24,16 @@ html.transition *::after {
   color: var(--color-fifth);
 }
 
-.features-content-parag, .motto-content-parag {
+.trainers-content-card-name {
+  font-size: calc(1.2rem + 0.5vw);
+  color: var(--color-fifth);
+}
+
+.trainers-content-card-specialty {
+  color: var(--color-fifth);
+}
+
+.trainers-content-card-parag, .features-content-parag, .motto-content-parag {
   font-size: calc(1rem + 0.8vw);
   color: var(--color-fifth);
   font-weight: 400;
@@ -110,6 +119,11 @@ a:visited {
   font-weight: 300;
   letter-spacing: 0.2rem;
   font-size: calc(1.2rem + 0.5vw);
+}
+
+.trainers a:link,
+.trainers a:visited {
+  color: var(--color-black);
 }
 
 i {
@@ -896,10 +910,184 @@ i {
 }
 
 .trainers {
-  background-color: var(--color-secondary);
+  background-color: var(--color-third-mod);
   grid-column: center-start/center-end;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.trainers-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-black);
+  background-color: var(--color-third-mod);
+  padding: 1rem 0;
+  border-bottom-left-radius: 8rem;
+  border-bottom-right-radius: 8rem;
+}
+.trainers-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap: 6vw calc(1rem + 1vw);
+  place-items: center;
+}
+.trainers-content-card {
+  display: grid;
+  height: 48rem;
+  width: 30rem;
+  margin-bottom: 1vw;
+  position: relative;
+  overflow: hidden;
+}
+.trainers-content-card-specialty, .trainers-content-card-name, .trainers-content-card-parag, .trainers-content-card-link {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  transform: translate(-25rem, -15rem);
+  visibility: hidden;
+  opacity: 0;
+  padding: 1.5rem;
+}
+.trainers-content-card-specialty {
+  color: var(--color-black);
+  bottom: 60%;
+}
+.trainers-content-card-name {
+  color: var(--color-black);
+  bottom: 50%;
+  margin-bottom: 1.2rem;
+}
+.trainers-content-card-parag {
+  color: var(--color-black);
+  width: 35rem;
+  bottom: 30%;
+  letter-spacing: 0.4rem;
+  line-height: 1.4;
+  font-family: "Balsamiq Sans", cursive;
+}
+.trainers-content-card-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+.trainers-content-card a:link,
+.trainers-content-card a:visited {
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  bottom: 18%;
+}
+.trainers-content-card a:link:hover,
+.trainers-content-card a:visited:active {
+  background-color: var(--color-secondary);
+}
+.trainers-content-card:last-child {
+  margin-bottom: none;
+}
+.trainers-content-card:hover .trainers-content-card-image, .trainers-content-card:active .trainers-content-card-image {
+  filter: contrast(30%);
+}
+.trainers-content-card:hover .trainers-content-card-specialty, .trainers-content-card:hover .trainers-content-card-name, .trainers-content-card:hover .trainers-content-card-parag, .trainers-content-card:hover .trainers-content-card-link, .trainers-content-card:active .trainers-content-card-specialty, .trainers-content-card:active .trainers-content-card-name, .trainers-content-card:active .trainers-content-card-parag, .trainers-content-card:active .trainers-content-card-link {
+  animation: cardHoverText 1.5s linear forwards;
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
+@keyframes cardHoverText {
+  0% {
+    transform: translate(-25rem, -15rem);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(8rem, -15rem);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translate(8rem, 0rem);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0rem, 0rem);
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .trainers-content-card-specialty {
+    bottom: 81%;
+  }
+  .trainers-content-card-name {
+    bottom: 70%;
+  }
+  .trainers-content-card-parag {
+    bottom: 30%;
+  }
+  .trainers-content-card-link {
+    bottom: 20%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .trainers-content-card-specialty {
+    bottom: 60%;
+  }
+  .trainers-content-card-name {
+    bottom: 50%;
+  }
+  .trainers-content-card-parag {
+    bottom: 30%;
+    margin-bottom: none;
+  }
+  .trainers-content-card-link {
+    bottom: 25%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .trainers-title {
+    margin-bottom: calc(6rem + 1vh);
+  }
+  .trainers-content {
+    margin-right: calc(2.5rem + 2vw);
+    margin-left: calc(2.5rem + 2vw);
+  }
+  .trainers-content-card-specialty {
+    bottom: 50%;
+  }
+  .trainers-content-card-name {
+    bottom: 40%;
+  }
+  .trainers-content-card-parag {
+    bottom: 28%;
+    margin-bottom: none;
+  }
+  .trainers-content-card-link {
+    bottom: 5%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .trainers-content {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3vw calc(1rem + 1vw);
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  .trainers-content-card {
+    width: 25rem;
+  }
+  .trainers-content-card-specialty {
+    bottom: 65%;
+  }
+  .trainers-content-card-name {
+    bottom: 55%;
+  }
+  .trainers-content-card-parag {
+    bottom: 32%;
+    margin-bottom: none;
+    width: 23rem;
+  }
+  .trainers-content-card-link {
+    bottom: 5%;
+  }
+}
 .testimonials {
   background-color: var(--color-third);
   grid-column: container-start/container-end;

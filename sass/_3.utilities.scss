@@ -37,6 +37,11 @@ a:visited {
   font-size: font-size(font-size-small);
 }
 
+.trainers a:link,
+.trainers a:visited {
+  color: var(--color-black);
+}
+
 i {
   color: var(--color-primary);
   font-size: font-size(font-size-medium);

@@ -22,6 +22,12 @@
   }
 }
 
+@mixin media-query-desktop-max-width {
+  @media screen and (max-width: break-point(break-point-desktop)) {
+    @content;
+  }
+}
+
 @mixin media-query-xtablet {
   @media screen and (max-width: break-point(break-point-xtablet)) {
     @content;
@@ -48,6 +54,12 @@
 
 @mixin media-query-small {
   @media screen and (max-width: break-point(break-point-small)) {
+    @content;
+  }
+}
+
+@mixin media-query-xsmall {
+  @media screen and (max-width: break-point(break-point-xsmall)) {
     @content;
   }
 }

@@ -1,4 +1,248 @@
 .trainers {
-  background-color: var(--color-secondary);
+  background-color: var(--color-third-mod);
   grid-column: center-start / center-end;
+  @extend %section-padding;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+
+  &-title {
+    @extend %section-heading;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-black);
+    background-color: var(--color-third-mod);
+    padding: 1rem 0;
+    border-bottom-left-radius: 8rem;
+    border-bottom-right-radius: 8rem;
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 6vw calc(1rem + 1vw);
+    place-items: center;
+
+    &-card {
+      display: grid;
+      height: 48rem;
+      width: 30rem;
+      margin-bottom: 1vw;
+      position: relative;
+      overflow: hidden;
+
+      &-specialty,
+      &-name,
+      &-parag,
+      &-link {
+        position: absolute;
+        bottom: 20%;
+        left: 5%;
+        transform: translate(-25rem, -15rem);
+        visibility: hidden;
+        opacity: 0;
+        padding: 1.5rem;
+      }
+
+      &-specialty {
+        @extend %section-small-subheading;
+        color: var(--color-black);
+        bottom: 60%;
+      }
+
+      &-name {
+        @extend %section-subheading;
+        color: var(--color-black);
+        bottom: 50%;
+        margin-bottom: 1.2rem;
+      }
+
+      &-parag {
+        @extend %section-parag;
+        color: var(--color-black);
+        width: 35rem;
+        bottom: 30%;
+        letter-spacing: 0.4rem;
+        line-height: 1.4;
+        font-family: "Balsamiq Sans", cursive;
+      }
+
+      &-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease-in-out;
+      }
+
+      a:link,
+      a:visited {
+        font-weight: 400;
+        letter-spacing: 0.2rem;
+        bottom: 18%;
+      }
+
+      a:link:hover,
+      a:visited:active {
+        background-color: var(--color-secondary);
+      }
+    }
+
+    &-card:last-child {
+      margin-bottom: none;
+    }
+
+    &-card:hover .trainers-content-card-image,
+    &-card:active .trainers-content-card-image {
+      filter: contrast(30%);
+    }
+
+    &-card:hover .trainers-content-card-specialty,
+    &-card:hover .trainers-content-card-name,
+    &-card:hover .trainers-content-card-parag,
+    &-card:hover .trainers-content-card-link,
+    &-card:active .trainers-content-card-specialty,
+    &-card:active .trainers-content-card-name,
+    &-card:active .trainers-content-card-parag,
+    &-card:active .trainers-content-card-link {
+      animation: cardHoverText 1.5s linear forwards;
+      z-index: 1;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes cardHoverText {
+  0% {
+    transform: translate(-25rem, -15rem);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translate(8rem, -15rem);
+    opacity: 0.4;
+  }
+
+  60% {
+    transform: translate(8rem, 0rem);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(0rem, 0rem);
+    opacity: 1;
+  }
+}
+
+@include media-query-desktop-large {
+  .trainers {
+    &-content {
+      &-card {
+        &-specialty {
+          bottom: 81%;
+        }
+
+        &-name {
+          bottom: 70%;
+        }
+
+        &-parag {
+          bottom: 30%;
+        }
+
+        &-link {
+          bottom: 20%;
+        }
+      }
+    }
+  }
+}
+
+@include media-query-desktop-max-width {
+  .trainers {
+    &-content {
+      &-card {
+        &-specialty {
+          bottom: 60%;
+        }
+
+        &-name {
+          bottom: 50%;
+        }
+
+        &-parag {
+          bottom: 30%;
+          margin-bottom: none;
+        }
+
+        &-link {
+          bottom: 25%;
+        }
+      }
+    }
+  }
+}
+
+@include media-query-medium {
+  .trainers {
+    &-title {
+      margin-bottom: calc(6rem + 1vh);
+    }
+
+    &-content {
+      margin-right: calc(2.5rem + 2vw);
+      margin-left: calc(2.5rem + 2vw);
+
+      &-card {
+        &-specialty {
+          bottom: 50%;
+        }
+
+        &-name {
+          bottom: 40%;
+        }
+
+        &-parag {
+          bottom: 28%;
+          margin-bottom: none;
+        }
+
+        &-link {
+          bottom: 5%;
+        }
+      }
+    }
+  }
+}
+
+@include media-query-xsmall {
+  .trainers {
+    &-content {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 3vw calc(1rem + 1vw);
+      margin-right: 1rem;
+      margin-left: 1rem;
+
+      &-card {
+        width: 25rem;
+
+        &-specialty {
+          bottom: 65%;
+        }
+
+        &-name {
+          bottom: 55%;
+        }
+
+        &-parag {
+          bottom: 32%;
+          margin-bottom: none;
+          width: 23rem;
+        }
+
+        &-link {
+          bottom: 5%;
+        }
+      }
+    }
+  }
 }
