@@ -6,17 +6,17 @@ html.transition *::after {
   transition-delay: 0 !important;
 }
 
-.features-content:nth-child(9), .features-content:nth-child(8), .features-content:nth-child(7), .features-content:nth-child(6), .features-content:nth-child(5), .features-content:nth-child(4), .features-content:nth-child(3), .features-content:nth-child(2), .features-content:nth-child(1), .motto, .showcase {
+.testimonials, .features-content:nth-child(9), .features-content:nth-child(8), .features-content:nth-child(7), .features-content:nth-child(6), .features-content:nth-child(5), .features-content:nth-child(4), .features-content:nth-child(3), .features-content:nth-child(2), .features-content:nth-child(1), .motto, .showcase {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.trainers, .motto, .showcase {
+.testimonials, .trainers, .motto, .showcase {
   padding: 6vh 4vw;
 }
 
-.trainers-title, .features-content-title, .motto-content-title {
+.testimonials-title, .trainers-title, .features-content-title, .motto-content-title {
   font-size: calc(1.5rem + 2vw);
   font-family: "Balsamiq Sans";
   font-weight: 300;
@@ -33,7 +33,7 @@ html.transition *::after {
   color: var(--color-fifth);
 }
 
-.trainers-content-card-parag, .features-content-parag, .motto-content-parag {
+.testimonials-content-slider-slide-parag, .trainers-content-card-parag, .features-content-parag, .motto-content-parag {
   font-size: calc(1rem + 0.8vw);
   color: var(--color-fifth);
   font-weight: 400;
@@ -1066,10 +1066,113 @@ i {
   }
 }
 .testimonials {
-  background-color: var(--color-third);
   grid-column: container-start/container-end;
+  background-image: linear-gradient(var(--color-third-mod), var(--color-third-mod)), url(/up/images/testimonials/testimonials-bg.jpg);
+}
+.testimonials-title {
+  text-align: center;
+  margin-bottom: 4vh;
+  color: var(--color-black);
+  letter-spacing: 0.3rem;
+}
+.testimonials-content {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+.testimonials-content-slider {
+  border: 0.2rem solid var(--color-black);
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: calc(2vh + 2vw) calc(2vh + 2vw);
+}
+.testimonials-content-slider-slide {
+  display: none;
+}
+.testimonials-content-slider-slide-parag {
+  color: var(--color-black);
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+.testimonials-content-slider-slide-title {
+  font-size: calc(1.5rem + 0.7vw);
+  font-family: "Balsamiq-Sans", cursive;
+  color: var(--color-black);
+  letter-spacing: 0.4rem;
+  line-height: 1.5;
+}
+.testimonials-content-slider .active {
+  display: block;
+  animation: slide 1s linear;
+}
+.testimonials-content-indicator {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  display: flex;
+  justify-content: center;
+}
+.testimonials-content-indicator-img {
+  height: calc(7rem + 6vw);
+  width: calc(7rem + 6vw);
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin: 2vh 3vw;
+  opacity: 0.2;
+  border: 0.3rem solid var(--color-black);
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+.testimonials-content-indicator .active {
+  opacity: 1;
 }
 
+@media screen and (min-width: 1600px) {
+  .testimonials-title {
+    font-size: 6.5rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 4vw;
+  }
+  .testimonials-content {
+    max-width: 130rem;
+  }
+  .testimonials-content-slider {
+    max-width: 90rem;
+    margin-bottom: 4vw;
+  }
+  .testimonials-content-slider-slide-parag {
+    font-size: 3rem;
+    line-height: 1.7;
+    letter-spacing: 0.3rem;
+  }
+  .testimonials-content-slider-slide-title {
+    font-size: 4rem;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 800px) {
+  .testimonials-content-slider-slide-parag {
+    font-size: 2rem;
+  }
+  .testimonials-content-indicator-img {
+    height: calc(7rem + 5vw);
+    width: calc(7rem + 5vw);
+  }
+}
+@media screen and (max-width: 600px) {
+  .testimonials-content-slider-slide-parag {
+    font-size: 1.8rem;
+  }
+}
 .clients {
   background-color: var(--color-fourth);
   grid-column: container-start/container-end;
