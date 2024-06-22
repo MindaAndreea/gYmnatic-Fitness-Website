@@ -52,6 +52,12 @@
   }
 }
 
+@mixin media-query-xmedium {
+  @media screen and (min-width: break-point(break-point-xmedium)) {
+    @content;
+  }
+}
+
 @mixin media-query-medium {
   @media screen and (max-width: break-point(break-point-medium)) {
     @content;
