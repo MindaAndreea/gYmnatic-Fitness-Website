@@ -1,4 +1,79 @@
 .clients {
-  background-color: var(--color-fourth);
   grid-column: container-start / container-end;
+  background-image: linear-gradient(
+      var(--color-fourth-mod),
+      var(--color-fourth-mod)
+    ),
+    url(/up/images/clients/clients-bg.jpg);
+  @extend %background;
+  @extend %section-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-title {
+    @extend %section-heading;
+    text-align: center;
+    font-family: "Balsamiq-Sans", cursive;
+    margin-bottom: calc(2rem + 3vw);
+    position: relative;
+    align-self: center;
+    padding: 2rem;
+  }
+
+  &-title::before,
+  &-title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    background-color: var(--color-fifth);
+    height: 100%;
+    width: 0.2rem;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &-title::before {
+    left: 0;
+  }
+
+  &-title::after {
+    right: 0;
+  }
+
+  &-title:hover::before,
+  &-title:active::before,
+  &-title:hover::after,
+  &-title:active::after {
+    height: 0.2rem;
+    width: 100%;
+  }
+
+  &-title:hover::after,
+  &-title:active::after {
+    top: 100%;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    &-image {
+      background-color: var(--color-fifth-mod);
+      width: 23rem;
+      margin: 5rem;
+      border-radius: 2rem;
+      padding: 2rem;
+      transition: transform 0.5s ease-in-out;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-image:hover,
+    &-image:active {
+      transform: scale(1.3);
+    }
+  }
 }
